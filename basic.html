@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Facilities Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>University of Moratuwa Booking System</h1>
+    </header>
+    <main>
+        <section id="reservations">
+            <h2>Reservation Details</h2>
+            <form id="reservation-form">
+                <label for="facility">Facility:</label>
+                <select id="facility" name="facility">
+                    <option value="basketball-court">Basketball Court</option>
+                    <option value="auditorium">Auditorium</option>
+                    <option value="hall">Hall</option>
+                    <option value="gymnasium">Gymnasium</option>
+                </select>
+                <br>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date">
+                <br>
+                <button type="button" id="check-availability-btn">Check Availability</button>
+            </form>
+            <div id="calendar-container">
+                <div id="time-slots"></div>
+            </div>
+        </section>
+        <section id="booking" style="display: none;">
+            <h2>Booking Prompt</h2>
+            <form id="booking-form">
+                <label for="university-id">University ID (6 digits followed by a letter):</label>
+                <input type="text" id="university-id" name="university-id" pattern="[0-9]{6}[a-zA-Z]" title="University ID should be 6 digits followed by a letter" required>
+                <br>
+                <label for="members">Number of Members:</label>
+                <input type="number" id="members" name="members" max="10" min="1">
+                <input type="hidden" id="selected-slot" name="selected-slot">
+                <br>
+                <button type="submit">Book</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 University Facilities Booking</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
